@@ -6,6 +6,7 @@ Sample Django (>= 1.5) project skeleton. Inspired by two-scoops book and https:/
 usage
 =====
 
-    $ django-admin.py startproject --template=https://github.com/alexvassel/djeleton/zipball/master project_name
-    $ cd project_name
+    $ mkdir folder_name
+    $ django-admin.py startproject --template=https://github.com/alexvassel/djeleton/zipball/master project_name folder_name
+    $ cd folder_name
     $ python manage.py runserver
