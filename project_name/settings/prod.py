@@ -1,10 +1,6 @@
 from __future__ import absolute_import
 from .common import *
 
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-
-
 """
 Fill with your Sentry key
 RAVEN_CONFIG = {
