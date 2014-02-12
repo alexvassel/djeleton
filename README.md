@@ -8,4 +8,4 @@ usage
 
     $ django-admin.py startproject --template=https://github.com/alexvassel/djeleton/zipball/master project_name
     $ cd project_name
-    $ ./manage.py runserver
+    $ python manage.py runserver
