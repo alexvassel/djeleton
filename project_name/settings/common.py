@@ -1,10 +1,13 @@
 # Django settings for project.
-import os
+from os.path import abspath, dirname, join, normpath
+from sys import path
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-DJANGO_ROOT = os.getcwd() + '/'
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+
+path.append(DJANGO_ROOT)
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -77,7 +80,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    DJANGO_ROOT + 'static/',
+    normpath(join(DJANGO_ROOT, 'static')),
 )
 
 
@@ -125,10 +128,7 @@ ROOT_URLCONF = '{{project_name}}.urls'
 WSGI_APPLICATION = '{{project_name}}.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    DJANGO_ROOT + 'templates/',
+    normpath(join(DJANGO_ROOT, 'templates')),
 )
 
 
@@ -150,28 +150,3 @@ INSTALLED_APPS = (
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-
-#These thigs for loutput in uwsgi log file
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}
