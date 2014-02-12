@@ -9,4 +9,4 @@ usage
     $ mkdir folder_name
     $ django-admin.py startproject --template=https://github.com/alexvassel/djeleton/zipball/master project_name folder_name
     $ cd folder_name
-    $ python manage.py runserver
+    $ python manage.py runserver --settings=project_name.settings.local

@@ -5,17 +5,13 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 """
-INSTALLED_APPS += (
-    'debug_toolbar',
+Fill with your Sentry key
+RAVEN_CONFIG = {
+    'dsn': 'http://3d44150fd57244fdbd21ab19fe6bc65d:fb6f7408c07f4c93b4840fec056535b2@ekouser.linus.su/sentry/3',
+}
+
+INSTALLED_APPS + (
+    # ...
+    'raven.contrib.django.raven_compat',
 )
-
-MIDDLEWARE_CLASSES += (
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-)
-
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
-# http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
-INTERNAL_IPS = ('127.0.0.1',)
-########## END TOOLBAR CONFIGURATION
 """
