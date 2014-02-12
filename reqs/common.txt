@@ -1,0 +1,3 @@
+ipython
+Django==1.5.1
+ipdb==0.7
