@@ -34,4 +34,4 @@ def update_remote(branch='master', restart=False):
     run('git pull origin %s' % branch)
     puts('Restart uwsgi on %s' % (dev))
     if restart:
-        run('touch /home/linus/projects/' + PROJECT_NAME + '/')
+        run('touch /home/' + env.user + '/projects/' + PROJECT_NAME + '/')
