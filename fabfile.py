@@ -1,11 +1,13 @@
 # encoding: utf-8
 from fabric.api import *
+#!
+dev = 'dev'
 
-dev = '192.168.1.55'
-
-env.user = 'linus'
+#!
+env.user = 'user'
 env.hosts = (dev,)
-env['password'] = 'linus_2013'
+#!
+env['password'] = 'password'
 
 PROJECT_NAME = '{{project_name}}'
 
